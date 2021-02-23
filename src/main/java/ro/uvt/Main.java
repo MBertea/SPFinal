@@ -11,33 +11,28 @@ import ro.uvt.services.AlignRight;
 public class Main {
 
     public static void main(String[] args) {
-        // System.out.println("Hi!");
-
           Section section = new Section();
-        List<Autor> autori = Arrays.asList(new Autor("George Mart"));
+        List<Autor> autori = Arrays.asList(new Autor("First Author"));
 
-        Carte c = new Carte((ArrayList<Autor>) autori, "Cartea");
+        Carte c = new Carte((ArrayList<Autor>) autori, "Book");
         c.add(new Paragraf("aa"));
         Section s1 = new Section("bb");
         s1.add(new Imagine("cc"));
         c.add(s1);
-        //c.createCapitol("Introducere", Arrays.asList(new Paragraf(), new Imagine(), new Tabel(), new Tabel()));
-
-         //c.render();
 
         long startTime = System.currentTimeMillis();
-        Element img1 = new ImageProxy ("Pamela Anderson");
-        Element img2 = new ImageProxy ("Kim");
-        Element img3 = new ImageProxy ("Kirby");
+        Element img1 = new ImageProxy ("First Image");
+        Element img2 = new ImageProxy ("Second Image");
+        Element img3 = new ImageProxy ("Third Image");
 
-        Section section1 = new Section ("Front");
+        Section section1 = new Section ("First Section");
         section1.add(img1);
 
-        Section section2 = new Section ("Summer");
+        Section section2 = new Section ("Second");
         section2.add(img2);
         section2.add(img3);
 
-        Carte book = new Carte ((ArrayList<Autor>) autori, "Cartea");
+        Carte book = new Carte ((ArrayList<Autor>) autori, "Book");
         book.add(section1);
         book.add(section2);
 
@@ -62,14 +57,14 @@ public class Main {
         endTime = System.currentTimeMillis();
 
         System.out.println("Printing of the section 2 took " + (endTime - startTime) + " milliseconds");
-        Section cap1 = new Section("Capitolul 1");
-        Paragraf p1 = new Paragraf("Paragraph 1");
+        Section cap1 = new Section("First Chapter");
+        Paragraf p1 = new Paragraf("First Paragraph");
         cap1.add(p1);
-        Paragraf p2 = new Paragraf("Paragraph 2");
+        Paragraf p2 = new Paragraf("Second Paragraph");
         cap1.add(p2);
-        Paragraf p3 = new Paragraf("Paragraph 3");
+        Paragraf p3 = new Paragraf("ThirdParagraph");
         cap1.add(p3);
-        Paragraf p4 = new Paragraf("Paragraph 4");
+        Paragraf p4 = new Paragraf("Fourth Paragraph");
         cap1.add(p4);
         System.out.println("Printing without Alignment");
         System.out.println();
@@ -81,7 +76,5 @@ public class Main {
         System.out.println();
         System.out.println("Printing with Alignment");
         System.out.println();
-        //cap1.render();
-
     }
 }
